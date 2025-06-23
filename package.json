@@ -1,0 +1,18 @@
+{
+  "name": "basic-pern-project-structure",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "frontend": "cd frontend && yarn dev",
+    "backend": "cd backend && yarn dev",
+    "dev": "concurrently \"yarn backend\" \"yarn frontend\"",
+    "install-all": "yarn install && cd frontend && yarn install && cd ../backend && yarn install"
+  },
+  "keywords": [],
+  "author": "Shubhojit Mitra <Shubhojit.120225@stu.upes.ac.in>",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
