@@ -102,7 +102,26 @@ docker-compose up -d db
 docker ps
 ```
 
-### 4. Run the Application
+### 4. Generate prisma client and create DB Migrations
+Run the following commands for prisma and postgres setup
+
+```bash
+# Generate prisma client by first going into the backend directory
+cd backend && yarn db:generate
+
+# Create database migration by running the following command
+yarn db:migration
+
+# You can also see your database in prisma studio
+yarn db:studio
+```
+
+Go back to the root directory after generating and migrating
+```bash
+cd ..
+```
+
+### 5. Run the Application
 You have several options to run the application:
 
 ```bash
