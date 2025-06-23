@@ -102,7 +102,14 @@ docker-compose up -d db
 docker ps
 ```
 
-### 4. Generate prisma client and create DB Migrations
+### 4. After your database container is up and running
+Your postgresql database will be available to connect, add the following to your .env file inside of the backend dir
+```bash
+# you must be in the root dir to run this command directly to add the necessary environment variable
+cd backend && touch .env && echo 'DATABASE_URL="postgresql://postgresuser:postgrespassword@localhost:5432/db_postgres?schema=public"' >> .env
+```
+
+### 5. Generate prisma client and create DB Migrations
 Run the following commands for prisma and postgres setup
 
 ```bash
@@ -121,7 +128,7 @@ Go back to the root directory after generating and migrating
 cd ..
 ```
 
-### 5. Run the Application
+### 6. Run the Application
 You have several options to run the application:
 
 ```bash
