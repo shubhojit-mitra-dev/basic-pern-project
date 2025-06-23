@@ -66,7 +66,52 @@ This project provides a modern, scalable, and type-safe template for building we
 - **nodemon**: Development server with hot reload
 - **concurrently**: Run multiple commands concurrently
 
-## Project Structure
+## Quick Start Guide
 
-The project is organized into two main directories:
+This project uses Yarn as the package manager. Make sure you have Yarn installed before proceeding.
 
+### 1. Set Up Node.js Version
+
+We use a specific Node.js version for consistency (defined in the `.nvmrc` file):
+
+```bash
+# Install nvm if you haven't already
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# Use the Node.js version specified in .nvmrc
+nvm use
+```
+
+### 2. Install All Dependencies
+
+We provide a convenience script to install dependencies for the root project, frontend, and backend:
+
+```bash
+# Install all dependencies at once
+yarn install-all
+```
+
+### 3. Start the Development Database
+Before running the application, start the PostgreSQL database using Docker:
+
+```bash
+# Start the database container
+docker-compose up -d db
+
+# Verify the container is running
+docker ps
+```
+
+### 4. Run the Application
+You have several options to run the application:
+
+```bash
+# Run both frontend and backend concurrently
+yarn dev
+
+# Or run them separately
+yarn frontend  # Starts only the Next.js frontend
+yarn backend   # Starts only the Express backend
+```
+
+The frontend will be available at http://localhost:3000 and the backend at http://localhost:5000.
